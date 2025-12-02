@@ -15,7 +15,7 @@ static class Program {
             day = 1;
         }
 		string className = $"Day{day:D2}";
-        Type? dayType = Assembly.GetExecutingAssembly().GetTypes().FirstOrDefault(t => t.Name == className && t.Namespace == "aoc2025.Days");
+        Type? dayType = Assembly.GetExecutingAssembly().GetTypes().FirstOrDefault(t => t.Name == className && t.Namespace == "aoc2025.src.Days");
         if (dayType == null) {
             Console.WriteLine($"Day {day} not found.");
             return;
