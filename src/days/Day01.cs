@@ -1,10 +1,8 @@
-using System;
 using System.IO;
-using aoc2025.src.utils;
 
 namespace aoc2025.src.Days;
-public static class Day01 {
-    public static void Part1() {
+public class Day01 : IDay {
+    public object SolvePart1() {
         int counter = 0;
         int position = 50;
         foreach (string line in File.ReadLines("input/Day01.txt")) {
@@ -16,9 +14,9 @@ public static class Day01 {
                 counter += 1;
             }
         }
-        Console.WriteLine($"Solution: {counter}");
+        return counter;
     }
-    public static void Part2() {
-        Console.WriteLine("Solution: wip");
+    public object SolvePart2() {
+        return "wip";
     }
 }
