@@ -29,8 +29,8 @@ public class Day01 : IDay {
             //goal is to determine the number of multiples of 100 in between the old and new position.
             int min = Math.Min(position, newposition);
             int max = Math.Max(position, newposition);
-            int lower = min % 100 == 0 ? min : min - Mathutils.TrueMod(min, 100) + 100;
-            int upper = max % 100 == 0 ? max : max - Mathutils.TrueMod(max, 100);
+            int lower = min % 100 == 0 ? min : min - MathUtils.TrueMod(min, 100) + 100;
+            int upper = max % 100 == 0 ? max : max - MathUtils.TrueMod(max, 100);
             if (lower <= upper) {
                 counter += (upper - lower) / 100 + 1;
             }
@@ -38,7 +38,7 @@ public class Day01 : IDay {
             if (position == 0) {
                 counter -= 1;
             }
-            position = Mathutils.TrueMod(newposition, 100);
+            position = MathUtils.TrueMod(newposition, 100);
         }
         return counter;
     }
