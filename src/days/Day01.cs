@@ -1,13 +1,18 @@
 using System;
 using System.IO;
+using aoc2025.src.interfaces;
 using aoc2025.src.utils;
 
 namespace aoc2025.src.Days;
 public class Day01 : IDay {
+    private readonly string _inputPath;
+    public Day01(string? inputPath) {
+        _inputPath = inputPath ?? "input/Day01.txt";
+    }
     public object SolvePart1() {
         int counter = 0;
         int position = 50;
-        foreach (string line in File.ReadLines("input/Day01.txt")) {
+        foreach (string line in File.ReadLines(_inputPath)) {
             int sign = line[0] == 'R' ? 1 : -1;
             int increment = int.Parse(line[1..]);
             position += sign * increment;
@@ -22,7 +27,7 @@ public class Day01 : IDay {
         int counter = 0;
         int position = 50;
         int newposition;
-        foreach (string line in File.ReadLines("input/Day01.txt")) {
+        foreach (string line in File.ReadLines(_inputPath)) {
             int increment = int.Parse(line[1..]);
             newposition = line[0] == 'R' ? position + increment : position - increment;
 

@@ -1,10 +1,15 @@
 using System.IO;
 using System.Linq;
 using System.Text;
+using aoc2025.src.interfaces;
 
 namespace aoc2025.src.Days;
-public class Day03 : IDay {    
-    private static long getMaxJoltage(string bank, int n) {
+public class Day03 : IDay {
+    private readonly string _inputPath;
+    public Day03(string? inputPath) {
+        _inputPath = inputPath ?? "input/Day03.txt";
+    }
+	private static long getMaxJoltage(string bank, int n) {
         if (n <= 0 || bank.Length < n) return 0;
         var sb = new StringBuilder(n);
         int index = -1;
@@ -17,10 +22,10 @@ public class Day03 : IDay {
     }
 
     public object SolvePart1() {
-        return File.ReadLines("input/Day03.txt").Sum(line => getMaxJoltage(line, 2));
+        return File.ReadLines(_inputPath).Sum(line => getMaxJoltage(line, 2));
     }
 
     public object SolvePart2() {
-        return File.ReadLines("input/Day03.txt").Sum(line => getMaxJoltage(line, 12));
+        return File.ReadLines(_inputPath).Sum(line => getMaxJoltage(line, 12));
     }
 }

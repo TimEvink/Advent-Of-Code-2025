@@ -1,8 +1,9 @@
 ﻿using System;
+using System.IO;
 using System.Linq;
 using System.Reflection;
 
-using aoc2025.src;
+using aoc2025.src.interfaces;
 
 static class Program {
     static void Main(string[] args) {
@@ -24,7 +25,8 @@ static class Program {
             Console.WriteLine($"Day {day} not found.");
             return;
         }
-        IDay dayInstance = (IDay) Activator.CreateInstance(dayType)!;
+        string inputPath = Path.Combine("input", $"{className}.txt");
+        IDay dayInstance = (IDay) Activator.CreateInstance(dayType, new object?[] { inputPath })!;
         Console.WriteLine($"Running day {day}, part 1...");
         Console.WriteLine($"Solution: {dayInstance.SolvePart1()}");
         Console.WriteLine($"Running day {day}, part 2...");

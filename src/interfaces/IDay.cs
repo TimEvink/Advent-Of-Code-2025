@@ -1,4 +1,4 @@
-namespace aoc2025.src;
+namespace aoc2025.src.interfaces;
 
 public interface IDay {
     object SolvePart1();
