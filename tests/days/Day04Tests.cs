@@ -1,11 +1,9 @@
 using Xunit;
 using FluentAssertions;
 using aoc2025.src.Days;
-using aoc2025.src.interfaces;
 using System;
 
 namespace aoc2025.tests.Days;
-
 public class Day04Tests {
     [Fact]
     public void getArrayTest() {
